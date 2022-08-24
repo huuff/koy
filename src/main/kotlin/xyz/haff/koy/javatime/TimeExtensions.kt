@@ -1,5 +1,6 @@
-package xyz.haff.koy
+package xyz.haff.koy.javatime
 
+import xyz.haff.koy.javatime.LocalDateProgression
 import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -11,6 +12,8 @@ val Int.minutes: Duration get() = Duration.ofMinutes(this.toLong())
 val Int.seconds: Duration get() = Duration.ofSeconds(this.toLong())
 val Int.millis: Duration get() = Duration.ofMillis(this.toLong())
 
-val String.asDate get() = LocalDate.parse(this)
-val String.asTime get() = LocalTime.parse(this)
-val String.asDateTime get() = LocalDateTime.parse(this)
+val String.asDate: LocalDate get() = LocalDate.parse(this)
+val String.asTime: LocalTime get() = LocalTime.parse(this)
+val String.asDateTime: LocalDateTime get() = LocalDateTime.parse(this)
+
+operator fun LocalDate.rangeTo(endInclusive: LocalDate) = LocalDateProgression(this, endInclusive)
