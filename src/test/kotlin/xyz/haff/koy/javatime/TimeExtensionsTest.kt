@@ -2,17 +2,13 @@ package xyz.haff.koy.javatime
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
-import xyz.haff.koy.javatime.asDate
-import xyz.haff.koy.javatime.asDateTime
-import xyz.haff.koy.javatime.asTime
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
-import xyz.haff.koy.javatime.rangeTo
 
 class TimeExtensionsTest : FunSpec({
 
-    test("date literals") {
+    context("date literals") {
         test("as date") {
             "2022-07-29".asDate shouldBe LocalDate.of(2022, 7, 29)
         }
