@@ -16,4 +16,8 @@ class StringExtensionsTest : FunSpec({
         // ASSERT
         words shouldBe listOf("correct", "horse", "battery", "staple")
     }
+
+    test("minus") {
+        "test*string" - "test" shouldBe "*string"
+    }
 })

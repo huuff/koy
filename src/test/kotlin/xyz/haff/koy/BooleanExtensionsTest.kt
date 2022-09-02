@@ -32,4 +32,14 @@ class BooleanExtensionsTest: FunSpec({
             (true implies true) shouldBe true
         }
     }
+
+    context("ifTrue") {
+        test("string (true)") {
+            true.ifTrue("value") shouldBe "value"
+        }
+
+        test("string (false)") {
+            false.ifTrue("value") shouldBe ""
+        }
+    }
 })
