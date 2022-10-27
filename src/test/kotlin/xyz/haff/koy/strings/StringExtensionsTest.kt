@@ -20,4 +20,8 @@ class StringExtensionsTest : FunSpec({
     test("minus") {
         "test*string" - "test" shouldBe "*string"
     }
+
+    test("withoutNumbers") {
+        "34TEST567".withoutNumbers() shouldBe "TEST"
+    }
 })
