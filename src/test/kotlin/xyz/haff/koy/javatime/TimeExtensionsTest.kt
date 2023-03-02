@@ -2,9 +2,7 @@ package xyz.haff.koy.javatime
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
+import java.time.*
 
 class TimeExtensionsTest : FunSpec({
 
@@ -21,6 +19,16 @@ class TimeExtensionsTest : FunSpec({
             "2022-07-29T18:30:50".asDateTime shouldBe LocalDateTime.of(
                 LocalDate.of(2022, 7, 29),
                 LocalTime.of(18, 30, 50)
+            )
+        }
+
+        test("as offset-date-time") {
+            "2021-01-09T00:00+01:00".asOffsetDateTime shouldBe OffsetDateTime.of(
+                LocalDateTime.of(
+                    LocalDate.of(2021, 1, 9),
+                    LocalTime.of(0, 0, 0),
+                ),
+                ZoneOffset.ofHours(1)
             )
         }
     }
