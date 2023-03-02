@@ -24,4 +24,8 @@ class StringExtensionsTest : FunSpec({
     test("withoutNumbers") {
         "34TEST567".withoutNumbers() shouldBe "TEST"
     }
+
+    test("firstInteger") {
+        "34TEST".firstInteger shouldBe 34
+    }
 })
