@@ -41,5 +41,13 @@ class BooleanExtensionsTest: FunSpec({
         test("string (false)") {
             false.ifTrue("value") shouldBe ""
         }
+
+        test("nullable false") {
+            false.ifTrue(1) shouldBe null
+        }
+
+        test("nullable true") {
+            true.ifTrue(1) shouldBe 1
+        }
     }
 })
