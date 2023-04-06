@@ -6,7 +6,7 @@ import io.kotest.matchers.shouldBe
 class IntersperseTest : FunSpec({
 
     test("intersperse") {
-        listOf("1", "2", "3").intersperse(",") shouldBe listOf(
+        listOf("1", "2", "3").intersperse(",").toList() shouldBe listOf(
             "1",
             ",",
             "2",
